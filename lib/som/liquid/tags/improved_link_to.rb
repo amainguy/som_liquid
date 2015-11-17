@@ -1,3 +1,5 @@
+require 'locomotive/steam'
+
 module Som
   module Liquid
     module Tags
@@ -62,8 +64,8 @@ module Som
         end
 
         def set_options(markup, options)
-            @_options = {id: '', class: ''}
-            markup.scan(::Liquid::TagAttributes) { |key, value| @_options[key.to_sym] = value.gsub(/"|'/, '') }
+          @_options = {id: '', class: ''}
+          markup.scan(::Liquid::TagAttributes) { |key, value| @_options[key.to_sym] = value.gsub(/"|'/, '') }
         end
 
       end
